@@ -1,5 +1,5 @@
 {
-  "name": "qgz-share-site",
+  "name": "share-site",
   "version": "1.0.0",
   "description": "Read-only public file browser and Markdown reader",
   "main": "server.js",

@@ -4,13 +4,12 @@ const http = require('http');
 const os = require('os');
 const path = require('path');
 
-// 配置查找顺序：设置项 → 环境变量 → ~/.qgz-share/config.json → 旧版写死路径
-const DEFAULT_CONFIG_PATH = path.join(os.homedir(), '.qgz-share', 'config.json');
-const LEGACY_CONFIG_PATH = 'D:\\software\\qgz_code-server\\share-site\\config.json';
+// 配置查找顺序：设置项 → 环境变量 → ~/.share-site/config.json
+const DEFAULT_CONFIG_PATH = path.join(os.homedir(), '.share-site', 'config.json');
 const API_TIMEOUT_MS = 1200;
 
 function settings() {
-  return vscode.workspace.getConfiguration('qgzShare');
+  return vscode.workspace.getConfiguration('shareSite');
 }
 
 function configPath() {
@@ -18,14 +17,11 @@ function configPath() {
   if (configured) {
     return configured;
   }
-  const fromEnv = String(process.env.QGZ_SHARE_CONFIG || '').trim();
+  const fromEnv = String(process.env.SHARE_SITE_CONFIG || '').trim();
   if (fromEnv) {
     return fromEnv;
   }
-  if (fs.existsSync(DEFAULT_CONFIG_PATH)) {
-    return DEFAULT_CONFIG_PATH;
-  }
-  return LEGACY_CONFIG_PATH;
+  return DEFAULT_CONFIG_PATH;
 }
 
 function realPath(target) {
@@ -45,7 +41,7 @@ function readShareConfig() {
   } catch (error) {
     throw new Error(
       `读取分享配置失败：${file}（${error.message}）。` +
-        '请在设置 qgzShare.configPath 里指向 config.json，或设置环境变量 QGZ_SHARE_CONFIG。'
+        '请在设置 shareSite.configPath 里指向 config.json，或设置环境变量 SHARE_SITE_CONFIG。'
     );
   }
 
@@ -364,10 +360,10 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand(id, handler));
   };
 
-  register('qgzShare.openReader', (uri) => openInBrowser(uri));
-  register('qgzShare.copyReaderLink', (uri) => copyLink(uri, 'file'));
-  register('qgzShare.copyFolderLink', (uri) => copyFolderLink(uri));
-  register('qgzShare.copyHomeLink', () => copyHomeLink());
+  register('shareSite.openReader', (uri) => openInBrowser(uri));
+  register('shareSite.copyReaderLink', (uri) => copyLink(uri, 'file'));
+  register('shareSite.copyFolderLink', (uri) => copyFolderLink(uri));
+  register('shareSite.copyHomeLink', () => copyHomeLink());
 }
 
 function deactivate() {}

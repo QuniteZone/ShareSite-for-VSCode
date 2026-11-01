@@ -1,4 +1,4 @@
-﻿# 启动只读文件阅读站点（share-site）
+# 启动只读文件阅读站点（share-site）
 # 用法：powershell -ExecutionPolicy Bypass -File start-share-site.ps1
 
 $ErrorActionPreference = 'Stop'
@@ -14,7 +14,7 @@ if (-not (Test-Path $node)) {
 }
 
 function Get-SitePort {
-  $configPath = if ($env:QGZ_SHARE_CONFIG) { $env:QGZ_SHARE_CONFIG } else { Join-Path $root 'config.json' }
+  $configPath = if ($env:SHARE_SITE_CONFIG) { $env:SHARE_SITE_CONFIG } else { Join-Path $root 'config.json' }
   if (-not (Test-Path $configPath)) {
     Write-Host "[share-site] 找不到配置文件：$configPath"
     Write-Host "[share-site] 请先复制 config.example.json 为 config.json，填写 token 和 roots 后再启动。"

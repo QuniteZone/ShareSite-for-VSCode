@@ -25,9 +25,11 @@ Markdown 阅读页：右侧悬浮目录、阅读进度，笔记里手写的颜�
 
 ![阅读页](docs/images/view.png)
 
-代码块带语言标签和一键复制；图片点开看大图。
+代码块带语言标签和一键复制：
 
 ![代码](docs/images/view-image.png)
+
+图片点开看大图：
 
 ![图表](docs/images/view-figure.png)
 
@@ -174,7 +176,7 @@ powershell -ExecutionPolicy Bypass -File scripts\install-extension.ps1
 | `host` | `127.0.0.1` | 监听地址。建议保持回环，公网交给反代 |
 | `port` | `8010` | 监听端口 |
 | `baseUrl` | 空 | 对外访问的地址，用于生成分享链接；为空时用 `http://host:port` |
-| `siteName` | `QuniteZone 文件阅读` | 首页标题 |
+| `siteName` | `文件阅读` | 首页标题 |
 | `siteDescription` | 只读文件浏览与 Markdown 阅读 | 首页副标题 |
 | `roots[]` | 无（必填） | 分享根目录，见下 |
 | `exclude[]` | 空 | 额外排除的目录/文件名（不区分大小写） |
@@ -196,7 +198,7 @@ powershell -ExecutionPolicy Bypass -File scripts\install-extension.ps1
 - `path` 必须是已存在的目录，否则启动时会被跳过并打警告
 - `enabled: false` 的目录完全不对外，扩展也会提示「未启用」
 
-配置也可以用环境变量 `QGZ_SHARE_CONFIG` 指向别的位置，这样站点和扩展可以共用一份配置。
+配置也可以用环境变量 `SHARE_SITE_CONFIG` 指向别的位置，这样站点和扩展可以共用一份配置。
 
 ---
 
@@ -213,9 +215,9 @@ powershell -ExecutionPolicy Bypass -File scripts\install-extension.ps1
 
 | 设置 | 说明 |
 | --- | --- |
-| `qgzShare.configPath` | 配置文件路径。留空时依次尝试环境变量 `QGZ_SHARE_CONFIG`、`~/.qgz-share/config.json` |
-| `qgzShare.baseUrl` | 覆盖 `config.json` 里的 `baseUrl` |
-| `qgzShare.shortLinks` | 是否优先用 8 位短链接，默认开启 |
+| `shareSite.configPath` | 配置文件路径。留空时依次尝试环境变量 `SHARE_SITE_CONFIG`、`~/.share-site/config.json` |
+| `shareSite.baseUrl` | 覆盖 `config.json` 里的 `baseUrl` |
+| `shareSite.shortLinks` | 是否优先用 8 位短链接，默认开启 |
 
 实现上有两个容易踩的坑，已经处理了：
 

@@ -16,7 +16,7 @@
     button.addEventListener('click', () => {
       root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
       try {
-        localStorage.setItem('qgz-share-theme', root.dataset.theme);
+        localStorage.setItem('share-site-theme', root.dataset.theme);
       } catch {
         // ignore storage errors
       }

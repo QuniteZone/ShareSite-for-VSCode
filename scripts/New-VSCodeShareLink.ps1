@@ -1,9 +1,9 @@
-﻿param(
+param(
     [Parameter(Mandatory = $true)]
     [string]$Path,
 
-    # 默认读仓库里的 server\config.json；也可以指向 ~/.qgz-share/config.json
-    [string]$Config = $(if ($env:QGZ_SHARE_CONFIG) { $env:QGZ_SHARE_CONFIG } else { Join-Path (Split-Path -Parent $PSScriptRoot) 'server\config.json' }),
+    # 默认读仓库里的 server\config.json；也可以指向 ~/.share-site/config.json
+    [string]$Config = $(if ($env:SHARE_SITE_CONFIG) { $env:SHARE_SITE_CONFIG } else { Join-Path (Split-Path -Parent $PSScriptRoot) 'server\config.json' }),
 
     [ValidateSet('view', 'browse', 'home')]
     [string]$Mode = 'view',

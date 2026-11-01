@@ -100,7 +100,7 @@ function isInlineSafe(name) {
 }
 
 app.get('/healthz', (req, res) => {
-  res.json({ ok: true, service: 'qgz-share-site' });
+  res.json({ ok: true, service: 'share-site' });
 });
 
 // 本地 API：VS Code 扩展用它把「根目录/相对路径」换成 8 位短 id。

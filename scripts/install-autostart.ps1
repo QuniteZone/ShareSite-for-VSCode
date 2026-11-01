@@ -1,4 +1,4 @@
-﻿# 安装/卸载 share-site 的「登录时自动启动」（用户级，不需要管理员）
+# 安装/卸载 share-site 的「登录时自动启动」（用户级，不需要管理员）
 # 机制：Startup 文件夹快捷方式 → wscript → 隐藏窗口运行启动脚本
 #
 # 用法：
@@ -16,9 +16,9 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$name = 'QuniteZone Share Site'
+$name = 'Share Site'
 $startupDir = [Environment]::GetFolderPath('Startup')
-$autostartDir = Join-Path $env:LOCALAPPDATA 'QuniteZone\autostart'
+$autostartDir = Join-Path $env:LOCALAPPDATA 'ShareSite\autostart'
 $vbsName = 'start-share-site.vbs'
 $lnkPath = Join-Path $startupDir ($name + '.lnk')
 

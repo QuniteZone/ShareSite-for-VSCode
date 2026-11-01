@@ -16,15 +16,15 @@
 ## 前提
 
 1. 本机已按 [ShareSite 文档](../README.md) 配好并启动服务；
-2. 在设置里填 `qgzShare.configPath`，指向那份 `config.json`（留空时依次尝试环境变量 `QGZ_SHARE_CONFIG`、`~/.qgz-share/config.json`）。
+2. 在设置里填 `shareSite.configPath`，指向那份 `config.json`（留空时依次尝试环境变量 `SHARE_SITE_CONFIG`、`~/.share-site/config.json`）。
 
 ## 设置
 
 | 设置 | 默认 | 说明 |
 | --- | --- | --- |
-| `qgzShare.configPath` | 空 | 配置文件路径 |
-| `qgzShare.baseUrl` | 空 | 覆盖配置里的公网地址 |
-| `qgzShare.shortLinks` | `true` | 优先使用 8 位短链接 |
+| `shareSite.configPath` | 空 | 配置文件路径 |
+| `shareSite.baseUrl` | 空 | 覆盖配置里的公网地址 |
+| `shareSite.shortLinks` | `true` | 优先使用 8 位短链接 |
 
 ## 行为细节
 

@@ -54,7 +54,13 @@ function layout({ title, token, body, bodyClass = '', showTocButton = false }) {
 <div class="reading-progress" id="reading-progress"></div>
 <header class="topbar">
   <a class="brand" href="${escapeHtml(home)}">
-    <span class="brand-mark">Q</span>
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 3.5h7.2L19 8.3v12.2H7z"/>
+        <path d="M14 3.8v4.7h4.6"/>
+        <path d="M10 12h6M10 15.5h6"/>
+      </svg>
+    </span>
     <span class="brand-text">${escapeHtml(config.siteName)}</span>
   </a>
   <div class="top-actions">

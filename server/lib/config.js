@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const projectRoot = path.resolve(here, '..');
 
-const configPath = process.env.QGZ_SHARE_CONFIG
-  ? path.resolve(process.env.QGZ_SHARE_CONFIG)
+const configPath = process.env.SHARE_SITE_CONFIG
+  ? path.resolve(process.env.SHARE_SITE_CONFIG)
   : path.join(projectRoot, 'config.json');
 
 function fail(message) {
@@ -77,7 +77,7 @@ function readConfig() {
     port: Number(raw.port || 8010),
     baseUrl: String(raw.baseUrl || '').replace(/\/+$/, ''),
     token,
-    siteName: String(raw.siteName || 'QuniteZone 文件阅读'),
+    siteName: String(raw.siteName || '文件阅读'),
     siteDescription: String(raw.siteDescription || '只读文件浏览与 Markdown 阅读'),
     roots,
     enabledRoots,

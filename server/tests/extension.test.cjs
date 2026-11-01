@@ -12,7 +12,7 @@ const os = require('node:os');
 const extensionPath = path.resolve(__dirname, '..', '..', 'extension', 'extension.js');
 
 // ── 临时目录与配置 ───────────────────────────────────────────────
-const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'qgz-share-test-'));
+const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'share-site-test-'));
 const notesDir = path.join(fixtureRoot, 'notes');
 const filesDir = path.join(fixtureRoot, 'files');
 const archiveDir = path.join(fixtureRoot, 'archive');
@@ -150,10 +150,10 @@ function check(name, actual, expected) {
 }
 
 async function run() {
-  const copy = commands.get('qgzShare.copyReaderLink');
-  const copyFolder = commands.get('qgzShare.copyFolderLink');
-  const open = commands.get('qgzShare.openReader');
-  const home = commands.get('qgzShare.copyHomeLink');
+  const copy = commands.get('shareSite.copyReaderLink');
+  const copyFolder = commands.get('shareSite.copyFolderLink');
+  const open = commands.get('shareSite.openReader');
+  const home = commands.get('shareSite.copyHomeLink');
 
   check('命令已注册', [copy, copyFolder, open, home].every(Boolean), true);
 
