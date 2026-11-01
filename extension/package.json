@@ -1,0 +1,119 @@
+{
+  "name": "share-link",
+  "displayName": "阅读分享链接",
+  "description": "把当前文件或文件夹生成只读阅读站点的短链接，并在浏览器中直接打开",
+  "publisher": "QuniteZone",
+  "version": "2.2.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuniteZone/ShareSite-for-VSCode.git"
+  },
+  "homepage": "https://github.com/QuniteZone/ShareSite-for-VSCode#readme",
+  "bugs": {
+    "url": "https://github.com/QuniteZone/ShareSite-for-VSCode/issues"
+  },
+  "keywords": [
+    "share",
+    "markdown",
+    "reader",
+    "link"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.131.0"
+  },
+  "extensionKind": [
+    "workspace"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:qgzShare.openReader",
+    "onCommand:qgzShare.copyReaderLink",
+    "onCommand:qgzShare.copyFolderLink",
+    "onCommand:qgzShare.copyHomeLink"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "qgzShare.openReader",
+        "title": "分享：在浏览器中打开",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "qgzShare.copyReaderLink",
+        "title": "分享：复制阅读链接",
+        "icon": "$(link)"
+      },
+      {
+        "command": "qgzShare.copyFolderLink",
+        "title": "分享：复制所在目录的浏览链接",
+        "icon": "$(folder)"
+      },
+      {
+        "command": "qgzShare.copyHomeLink",
+        "title": "分享：复制阅读站点首页链接",
+        "icon": "$(home)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "qgzShare.openReader",
+          "when": "resourceScheme == file || resourceScheme == vscode-remote",
+          "group": "navigation@1"
+        },
+        {
+          "command": "qgzShare.copyReaderLink",
+          "when": "resourceScheme == file || resourceScheme == vscode-remote",
+          "group": "9_share@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "qgzShare.openReader",
+          "when": "resourceScheme == file || resourceScheme == vscode-remote",
+          "group": "navigation@1"
+        },
+        {
+          "command": "qgzShare.copyReaderLink",
+          "when": "resourceScheme == file || resourceScheme == vscode-remote",
+          "group": "9_share@1"
+        },
+        {
+          "command": "qgzShare.copyFolderLink",
+          "when": "resourceScheme == file || resourceScheme == vscode-remote",
+          "group": "9_share@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "阅读分享链接",
+      "properties": {
+        "qgzShare.configPath": {
+          "type": "string",
+          "default": "",
+          "description": "阅读站点配置文件路径，扩展会从中读取公网地址、分享 token 和启用的目录。留空时依次尝试环境变量 QGZ_SHARE_CONFIG、~/.qgz-share/config.json"
+        },
+        "qgzShare.baseUrl": {
+          "type": "string",
+          "default": "",
+          "description": "覆盖配置文件里的公网地址；留空时使用 config.json 的 baseUrl"
+        },
+        "qgzShare.shortLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "优先使用 8 位短链接（需要本机 share-site 正在运行）；读取不到时自动回退成带路径的长链接"
+        }
+      }
+    }
+  }
+}

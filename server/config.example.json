@@ -1,0 +1,36 @@
+{
+  "siteName": "QuniteZone 文件阅读",
+  "siteDescription": "只读文件浏览与 Markdown 阅读",
+
+  "host": "127.0.0.1",
+  "port": 8010,
+  "baseUrl": "https://share.example.com",
+
+  "token": "REPLACE_ME_WITH_AT_LEAST_24_RANDOM_CHARS",
+
+  "roots": [
+    {
+      "name": "notes",
+      "path": "D:\\QuniteZoneData\\notes",
+      "enabled": true,
+      "description": "个人笔记"
+    },
+    {
+      "name": "files",
+      "path": "D:\\QuniteZoneData\\files",
+      "enabled": true,
+      "description": "图片、PDF 等文件"
+    },
+    {
+      "name": "private",
+      "path": "D:\\QuniteZoneData\\private",
+      "enabled": false,
+      "description": "含隐私资料，默认关闭"
+    }
+  ],
+
+  "exclude": [".git", "node_modules", ".obsidian", "Thumbs.db", "desktop.ini"],
+
+  "maxMarkdownBytes": 8388608,
+  "maxTextBytes": 2097152
+}
