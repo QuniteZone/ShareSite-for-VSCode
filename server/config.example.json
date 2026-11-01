@@ -11,19 +11,19 @@
   "roots": [
     {
       "name": "notes",
-      "path": "D:\\QuniteZoneData\\notes",
+      "path": "D:\\notes",
       "enabled": true,
       "description": "个人笔记"
     },
     {
       "name": "files",
-      "path": "D:\\QuniteZoneData\\files",
+      "path": "D:\\files",
       "enabled": true,
       "description": "图片、PDF 等文件"
     },
     {
       "name": "private",
-      "path": "D:\\QuniteZoneData\\private",
+      "path": "D:\\private",
       "enabled": false,
       "description": "含隐私资料，默认关闭"
     }

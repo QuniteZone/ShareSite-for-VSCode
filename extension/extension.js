@@ -7,7 +7,6 @@ const path = require('path');
 // 配置查找顺序：设置项 → 环境变量 → ~/.qgz-share/config.json → 旧版写死路径
 const DEFAULT_CONFIG_PATH = path.join(os.homedir(), '.qgz-share', 'config.json');
 const LEGACY_CONFIG_PATH = 'D:\\software\\qgz_code-server\\share-site\\config.json';
-const DEFAULT_BASE_URL = 'https://share.qunitezone.top';
 const API_TIMEOUT_MS = 1200;
 
 function settings() {
@@ -55,11 +54,13 @@ function readShareConfig() {
     throw new Error('分享配置里的 token 无效，请检查 config.json');
   }
 
-  const baseUrl = String(settings().get('baseUrl') || raw.baseUrl || DEFAULT_BASE_URL)
+  const port = Number(raw.port) > 0 ? Number(raw.port) : 8010;
+
+  const baseUrl = String(
+    settings().get('baseUrl') || raw.baseUrl || `http://127.0.0.1:${port}`
+  )
     .trim()
     .replace(/\/+$/, '');
-
-  const port = Number(raw.port) > 0 ? Number(raw.port) : 8010;
 
   const roots = (Array.isArray(raw.roots) ? raw.roots : [])
     .filter((item) => item && typeof item === 'object' && item.path)

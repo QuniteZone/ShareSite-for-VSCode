@@ -15,21 +15,33 @@ ShareSite 由两部分组成：
 
 首页：按「根目录」分组列出可分享的内容，带条目搜索。
 
-![首页](docs/images/home.png)目录浏览：面包屑、文件类型图标、大小与修改时间。
+![首页](docs/images/home.png)
 
-![目录浏览](docs/images/browse.png)Markdown 阅读页：代码高亮 + 复制按钮、图片点开看大图、右侧悬浮目录。
+目录浏览：面包屑、文件类型图标、大小与修改时间。
 
-![阅读页](docs/images/view-image.png)公式支持（KaTeX），深浅色跟随系统、也能手动切换。
+![目录浏览](docs/images/browse.png)
+
+Markdown 阅读页：右侧悬浮目录、阅读进度，笔记里手写的颜色会被归一到统一色板。
+
+![阅读页](docs/images/view.png)
+
+代码块带语言标签和一键复制；图片点开看大图。
+
+![代码](docs/images/view-image.png)
+
+![图表](docs/images/view-figure.png)
+
+公式支持（KaTeX），深浅色跟随系统、也能手动切换。
 
 ![公式](docs/images/view-math.png)
 
-![深色主题](docs/images/view-dark.png)移动端自适应，目录变成抽屉。
+![深色主题](docs/images/view-dark.png)
 
-<img src="docs/images/home-mobile.png" alt="移动端首页" width="93" />
+移动端自适应，目录变成抽屉。
 
-<img src="docs/images/view-mobile.png" alt="移动端阅读页" width="32" />
-
-<img src="docs/images/toc-mobile.png" alt="移动端目录" width="32" />
+| 首页 | 阅读页 | 目录抽屉 |
+| --- | --- | --- |
+| ![移动端首页](docs/images/home-mobile.png) | ![移动端阅读页](docs/images/view-mobile.png) | ![移动端目录](docs/images/toc-mobile.png) |
 
 ---
 
@@ -174,7 +186,7 @@ powershell -ExecutionPolicy Bypass -File scripts\install-extension.ps1
 ```json
 {
   "name": "notes",
-  "path": "D:\\QuniteZoneData\\notes",
+  "path": "D:\\notes",
   "enabled": true,
   "description": "个人笔记"
 }
