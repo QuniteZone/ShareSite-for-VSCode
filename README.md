@@ -13,21 +13,25 @@ ShareSite 由两部分组成：
 
 ## 效果
 
-首页：按「根目录」分组列出可分享的内容，带条目搜索。
+目录浏览：面包屑、文件类型图标、大小与修改时间。
 
-![首页](docs/images/home.png)目录浏览：面包屑、文件类型图标、大小与修改时间。
+![目录浏览](docs/images/browse.png)
 
-Markdown 阅读页：右侧悬浮目录、阅读进度，笔记里手写的颜色会被归一到统一色板。
+Markdown 阅读页：右侧悬浮目录、阅读进度，代码块带语言标签和一键复制。
 
-代码块带语言标签和一键复制：
+![阅读页](docs/images/view-image.png)
 
-![代码](docs/images/view-image.png)公式支持（KaTeX），深浅色跟随系统、也能手动切换。
+公式支持（KaTeX），深浅色跟随系统、也能手动切换。
 
-![公式](docs/images/view-math.png)移动端自适应，目录变成抽屉。
+![公式](docs/images/view-math.png)
 
-| 首页 | 阅读页 | 目录抽屉 |
-| --- | --- | --- |
-|  |  |  |
+移动端自适应，目录变成抽屉。
+
+<p>
+  <img src="docs/images/home-mobile.png" width="220" alt="移动端首页">
+  <img src="docs/images/view-mobile.png" width="220" alt="移动端阅读页">
+  <img src="docs/images/toc-mobile.png" width="220" alt="移动端目录">
+</p>
 
 ---
 
