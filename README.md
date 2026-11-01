@@ -19,7 +19,7 @@ ShareSite 由两部分组成：
 
 Markdown 阅读页：右侧悬浮目录、阅读进度，笔记里手写的颜色会被归一到统一色板。
 
-![阅读页](docs/images/view.png)代码块带语言标签和一键复制：
+代码块带语言标签和一键复制：
 
 ![代码](docs/images/view-image.png)公式支持（KaTeX），深浅色跟随系统、也能手动切换。
 
